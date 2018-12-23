@@ -1,0 +1,31 @@
+@import "./scss/variables.scss";
+@import "./scss/mixins.scss";
+html{
+    height: 100%; 
+}
+body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    #app{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        p, strong{
+            margin-top:0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .link{
+            color: $accent;
+            &:visited{
+                color: adjust-hue($accent, -60deg);
+            }
+        }
+        ul{
+            list-style: none;
+            padding: 0;
+        }
+    }
+}

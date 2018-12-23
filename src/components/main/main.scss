@@ -1,0 +1,24 @@
+@import "src/scss/variables.scss";
+@import "src/scss/mixins.scss";
+.wrapper{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    height: 100%;
+    .main{
+        padding: 20px;
+        width: 80%;
+        flex-grow: 2;
+        background: $color4;
+        .container{
+            span{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 18px;
+            }
+            input{
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                font-size: 18px;
+            }
+        }
+    }
+}
