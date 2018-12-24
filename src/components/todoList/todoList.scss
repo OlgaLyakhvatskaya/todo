@@ -1,0 +1,15 @@
+@import "src/scss/variables.scss";
+@import "src/scss/mixins.scss";
+
+.done{
+   text-decoration: line-through;
+   opacity: 0.5;
+}
+input{
+    display: inline-block;
+    margin: 10px;
+    background: transparent;
+    border: 1px solid #e8e8e8;
+    padding: 4px 10px;
+    color: white;
+}
