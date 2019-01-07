@@ -1,23 +1,34 @@
 import './main.scss';
 import Aside from '../aside';
-import FirstWindow from '../firstWindow';
-import TodoList from '../todoList';
+import { Tabs } from '../tabs';
+import Login from '../../pages/login';
+import Home from '../../pages/home';
+
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    };
+  renderContent() {
+    const { user, onLogin, task, info, delTask, putTask } = this.props;
+    return (
+      <>
+        <h2>{user ? `Hello, ${user.firstName}` : 'Login'}</h2>
+        {
+          user
+            ? <><Home user={user} task={task} info={info} /><Tabs tabs={task} delTask={delTask} putTask={putTask} /></>
+            : <Login onLogin={onLogin} />
+        }
+      </>
+    );
   }
 
   render() {
+    const { loading } = this.props;
+
     return (
       <div className="wrapper">
         <Aside />
         <main className="main">
           <div className="container">
-            <FirstWindow />
-            <TodoList />
+            { loading ? 'Loading...' : this.renderContent() }
           </div>
         </main>
       </div>

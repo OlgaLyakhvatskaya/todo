@@ -1,8 +1,9 @@
 @import "src/scss/variables.scss";
 @import "src/scss/mixins.scss";
 
-button{
-    &.taskClose,
+a{
+    text-decoration: none;
+    &.taskDelete,
     &.taskDone,
     &.taskWating{
         display: inline-block;

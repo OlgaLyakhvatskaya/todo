@@ -1,20 +1,22 @@
 import './buttonsActions.scss';
 
 class ButtonsActions extends Component {
-  state = {
-    buttonClose: false,
-    buttonWating: false,
-    buttonDone: false
-  }
-
   render() {
-    const { buttonClose, buttonWating, buttonDone } = this.state;
-
+    const { item, delTask, putTask } = this.props;
     return (
       <>
-        <button type="button" prop={buttonClose} className="taskClose">Х</button>
-        <button type="button" prop={buttonDone} className="taskDone">V</button>
-        <button type="button" prop={buttonWating} className="taskWating">~</button>
+        <a href="#" onClick={() => delTask(item.id)} className="taskDelete">Х</a>
+        <a
+          href="#"
+          onClick={() => {
+            item.done = true;
+            return putTask(item);
+          }}
+          className="taskDone"
+        >
+            V
+        </a>
+        <a href="#" className="taskWating">~</a>
       </>
     );
   }
