@@ -1,11 +1,10 @@
-export const TabNav = ({ tabs, selectedIndex, selectTab }) => {
-  const day = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'];
+export const TabNav = ({ weekDays, selectedIndex, selectTab }) => {
 
   return (
     <div className="nav-tab">
       <div className="lists">
         {
-          tabs.map((task, index) => (
+          weekDays.map((day, index) => (
             <div
               key={index}
               className={(selectedIndex === index) ? 'active' : ''}
@@ -14,7 +13,7 @@ export const TabNav = ({ tabs, selectedIndex, selectTab }) => {
                 href="#"
                 onClick={event => selectTab(event, index)}
               >
-                {day[index]}
+                {day}
               </a>
             </div>
           ))

@@ -1,5 +1,9 @@
 import { rest } from './rest';
 
-const getTask = () => rest.get('tasks');
+const getTasks = () => rest.get('tasks');
 
-export { getTask };
+const delTask = id => rest.delete(`tasks/${id}`);
+
+const putTask = (id, data) => rest.put(`tasks/${id}`, data);
+
+export { getTasks, delTask, putTask };

@@ -1,19 +1,19 @@
-import './main.scss';
 import Aside from '../aside';
-import { Tabs } from '../tabs';
 import Login from '../../pages/login';
 import Home from '../../pages/home';
+import Todo from '../../pages/todo';
 
+import './main.scss';
 
 class Main extends Component {
   renderContent() {
-    const { user, onLogin, task, info, delTask, putTask } = this.props;
+    const { user, onLogin, tasks, info } = this.props;
     return (
       <>
         <h2>{user ? `Hello, ${user.firstName}` : 'Login'}</h2>
         {
           user
-            ? <><Home user={user} task={task} info={info} /><Tabs tabs={task} delTask={delTask} putTask={putTask} /></>
+            ? <><Home user={user} tasks={tasks} info={info} /><Todo /></>
             : <Login onLogin={onLogin} />
         }
       </>
