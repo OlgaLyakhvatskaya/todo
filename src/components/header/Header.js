@@ -1,11 +1,25 @@
 import Navigation from '../navigation';
 import './header.scss';
 
-const Header = () => (
+const Header = ({ user }) => (
   <header className="header">
     <div className="container">
-      <strong><a href="/">TODO</a></strong>
-      <Navigation list={['Вход', 'Регистрация']} />
+      <strong><a href="/">Logo</a></strong>
+      <div className="userLogin">
+        {
+          user
+            ? (
+              <nav className="index-menu">
+                <a href="/">
+                  {user.firstName}
+                </a>
+              </nav>
+            )
+            : (
+              <Navigation list={['SignIn', 'SignUp']} />
+            )
+        }
+      </div>
     </div>
   </header>
 );
